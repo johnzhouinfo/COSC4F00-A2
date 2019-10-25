@@ -1,7 +1,12 @@
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.Assert;
+import org.junit.Test;
 
-class TrigFunctionTest {
-    public void initialTest(){
+import static org.junit.Assert.*;
 
+public class TrigFunctionTest {
+
+    @Test
+    public void initial() {
+        Assert.assertEquals("Hello world!", TrigFunction.initial());
     }
 }
