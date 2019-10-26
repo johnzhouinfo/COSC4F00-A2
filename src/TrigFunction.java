@@ -8,11 +8,11 @@ public class TrigFunction {
         return "Hello world!";
     }
 
-    public static Double sin(double x) {
+    public static Double sin(Double x) {
         return 0.0;
     }
 
-    public static Double cos(double v) {
+    public static Double cos(Double v) {
         return 0.0;
     }
 }

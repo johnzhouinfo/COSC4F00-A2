@@ -12,7 +12,7 @@ public class TrigFunctionTest {
 
     @Test
     public void sinSuccessTest() {
-        Assert.assertEquals(0.0, java.util.Optional.of(TrigFunction.sin(0)));
+        Assert.assertEquals(0.0, java.util.Optional.of(TrigFunction.sin(0.0)));
         Assert.assertEquals(1.0, java.util.Optional.of(TrigFunction.sin(Math.PI / 2)));
         Assert.assertEquals(0.0, java.util.Optional.of(TrigFunction.sin(Math.PI)));
         Assert.assertEquals(-1.0, java.util.Optional.of(TrigFunction.sin((3 * Math.PI) / 2)));
@@ -20,7 +20,7 @@ public class TrigFunctionTest {
 
     @Test
     public void cosSuccessTest() {
-        Assert.assertEquals(1.0, java.util.Optional.of(TrigFunction.cos(0)));
+        Assert.assertEquals(1.0, java.util.Optional.of(TrigFunction.cos(0.0)));
         Assert.assertEquals(0.0, java.util.Optional.of(TrigFunction.cos(Math.PI / 2)));
         Assert.assertEquals(-1.0, java.util.Optional.of(TrigFunction.cos(Math.PI)));
         Assert.assertEquals(0.0, java.util.Optional.of(TrigFunction.cos((3 * Math.PI) / 2)));
