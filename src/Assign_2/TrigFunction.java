@@ -81,7 +81,10 @@ public final class TrigFunction {
      * @return
      */
     public static double csc(double angRad) {
-        return 0.0;
+        double radian = convertRadian(angRad);
+        if (radian == 0.0 || radian == Math.PI)
+            throw new InvalidInputException("Invalid number inputted (value = " + angRad + ")");
+        return 1 / sin(radian);
     }
 
     /**
@@ -91,7 +94,10 @@ public final class TrigFunction {
      * @return
      */
     public static double sec(double angRad) {
-        return 0.0;
+        double radian = convertRadian(angRad);
+        if (radian == Math.PI / 2 || radian == 3 * Math.PI / 2)
+            throw new InvalidInputException("Invalid number inputted (value = " + angRad + ")");
+        return 1 / cos(radian);
     }
 
     /**
