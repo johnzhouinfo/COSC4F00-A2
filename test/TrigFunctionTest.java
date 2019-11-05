@@ -11,7 +11,7 @@ public class TrigFunctionTest {
     /**
      * This is a test class for testing TrigFunction functionality
      */
-    private final double DIFF = 0.00000000001; //test for accuracy (11 decimal points )
+    private final double DIFF = 0.00000000001; //test for accuracy (11 decimal points)
 
     @Test
     public void sinSuccessTest() {
@@ -118,7 +118,7 @@ public class TrigFunctionTest {
         Assert.assertEquals(1.0, TrigFunction.cot(5 * Math.PI / 4), DIFF);
         Assert.assertEquals(Math.sqrt(3), TrigFunction.cot(Math.PI / 6), DIFF);
         Assert.assertEquals(Math.sqrt(3) / 3, TrigFunction.cot(Math.PI / 3), DIFF);
-        Assert.assertEquals(Math.sqrt(2) + 1, TrigFunction.cot(Math.PI / 12), DIFF);
+        Assert.assertEquals(Math.sqrt(3) + 2, TrigFunction.cot(Math.PI / 12), DIFF);
         Assert.assertEquals(Math.sqrt(2) - 1, TrigFunction.cot(3 * Math.PI / 8), DIFF);
     }
 
@@ -128,13 +128,13 @@ public class TrigFunctionTest {
             TrigFunction.cot(0);
             Assert.fail("Expected an InvalidInputException to be thrown");
         } catch (InvalidInputException e) {
-            Assert.assertEquals("Invalid number inputted (value = 0)", e.getMessage());
+            Assert.assertEquals("Invalid number inputted (value = 0.0)", e.getMessage());
         }
         try {
             TrigFunction.cot(Math.PI);
             Assert.fail("Expected an InvalidInputException to be thrown");
         } catch (InvalidInputException e) {
-            Assert.assertEquals("Invalid number inputted (value = " + 2 * Math.PI + ")", e.getMessage());
+            Assert.assertEquals("Invalid number inputted (value = " + Math.PI + ")", e.getMessage());
         }
         try {
             TrigFunction.cot(2 * Math.PI);
