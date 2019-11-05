@@ -47,23 +47,31 @@ public final class TrigFunction {
     }
 
     /**
-     * Tan function
+     * Tan function, using sin(x)/cos(x)
+     * It also handles the incorrect input when user input the value like PI/2 etc.
      *
      * @param angRad radian
      * @return
      */
     public static double tan(double angRad) {
-        return 0.0;
+        double radian = convertRadian(angRad);
+        if (radian == Math.PI / 2 || radian == 3 * Math.PI / 2)
+            throw new InvalidInputException("Invalid number inputted (value = " + angRad + ")");
+        return sin(radian) / cos(radian);
     }
 
     /**
-     * Cot function
+     * Cot function, since it just the inverse of tan(x) function, using cos(x)/sin(x)
+     * It will throw a invalid exception when user enter 0 or PI, etc.
      *
      * @param angRad radian
      * @return
      */
     public static double cot(double angRad) {
-        return 0.0;
+        double radian = convertRadian(angRad);
+        if (radian == 0.0 || radian == Math.PI)
+            throw new InvalidInputException("Invalid number inputted (value = " + angRad + ")");
+        return cos(radian) / sin(radian);
     }
 
     /**
