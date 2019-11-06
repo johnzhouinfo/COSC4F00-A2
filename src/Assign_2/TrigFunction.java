@@ -8,6 +8,7 @@ public final class TrigFunction {
 
     /**
      * Sin function using Taylor series approximation
+     * Returns the trigonometric cosine of radian
      *
      * @param angRad radian
      * @return
@@ -28,6 +29,7 @@ public final class TrigFunction {
 
     /**
      * Cos function using Taylor series approximation
+     * Returns the trigonometric cosine of radian
      *
      * @param angRad radian
      * @return
@@ -47,7 +49,7 @@ public final class TrigFunction {
     }
 
     /**
-     * Tan function, using sin(x)/cos(x)
+     * Returns the trigonometric tangent of radian, using sin(x)/cos(x)
      * It also handles the incorrect input when user input the value like PI/2 etc.
      *
      * @param angRad radian
@@ -61,7 +63,7 @@ public final class TrigFunction {
     }
 
     /**
-     * Cot function, since it just the inverse of tan(x) function, using cos(x)/sin(x)
+     * Returns the trigonometric cotangent of radian, since it just the inverse of tan(x) function, using cos(x)/sin(x)
      * It will throw a invalid exception when user enter 0 or PI, etc.
      *
      * @param angRad radian
@@ -75,23 +77,31 @@ public final class TrigFunction {
     }
 
     /**
-     * Csc function
+     * Returns the trigonometric cosecant of radian, by using 1/sin(x)
+     * It will throw an exception when user entered 0 or PI etc.
      *
      * @param angRad radian
      * @return
      */
     public static double csc(double angRad) {
-        return 0.0;
+        double radian = convertRadian(angRad);
+        if (radian == 0.0 || radian == Math.PI)
+            throw new InvalidInputException("Invalid number inputted (value = " + angRad + ")");
+        return 1 / sin(radian);
     }
 
     /**
-     * Sec function
+     * Returns the trigonometric secant of radian, by using 1/cos(x)
+     * It will throw an exception when user entered PI/2 or 3PI/2 etc.
      *
      * @param angRad radian
      * @return
      */
     public static double sec(double angRad) {
-        return 0.0;
+        double radian = convertRadian(angRad);
+        if (radian == Math.PI / 2 || radian == 3 * Math.PI / 2)
+            throw new InvalidInputException("Invalid number inputted (value = " + angRad + ")");
+        return 1 / cos(radian);
     }
 
     /**

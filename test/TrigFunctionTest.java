@@ -149,8 +149,8 @@ public class TrigFunctionTest {
         Assert.assertEquals(1.0, TrigFunction.csc(Math.PI / 2), DIFF);
         Assert.assertEquals(1.0, TrigFunction.csc(5 * Math.PI / 2), DIFF);
         Assert.assertEquals(-1.0, TrigFunction.csc(3 * Math.PI / 2), DIFF);
-        Assert.assertEquals(2.0, TrigFunction.csc(Math.PI / 3), DIFF);
-        Assert.assertEquals(2.0, TrigFunction.csc(5 * Math.PI / 3), DIFF);
+        Assert.assertEquals(2 * Math.sqrt(3) / 3, TrigFunction.csc(Math.PI / 3), DIFF);
+        Assert.assertEquals(-2 * Math.sqrt(3) / 3, TrigFunction.csc(5 * Math.PI / 3), DIFF);
         Assert.assertEquals(Math.sqrt(2), TrigFunction.csc(Math.PI / 4), DIFF);
         Assert.assertEquals(2 * Math.sqrt(3) / 3, TrigFunction.csc(Math.PI / 3), DIFF);
     }
@@ -161,13 +161,13 @@ public class TrigFunctionTest {
             TrigFunction.csc(0);
             Assert.fail("Expected an InvalidInputException to be thrown");
         } catch (InvalidInputException e) {
-            Assert.assertEquals("Invalid number inputted (value = 0)", e.getMessage());
+            Assert.assertEquals("Invalid number inputted (value = 0.0)", e.getMessage());
         }
         try {
             TrigFunction.csc(Math.PI);
             Assert.fail("Expected an InvalidInputException to be thrown");
         } catch (InvalidInputException e) {
-            Assert.assertEquals("Invalid number inputted (value = " + 2 * Math.PI + ")", e.getMessage());
+            Assert.assertEquals("Invalid number inputted (value = " + Math.PI + ")", e.getMessage());
         }
         try {
             TrigFunction.csc(2 * Math.PI);
