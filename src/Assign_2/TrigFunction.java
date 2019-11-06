@@ -8,7 +8,7 @@ public final class TrigFunction {
 
     /**
      * Sin function using Taylor series approximation
-     * Returns the trigonometric cosine of radian
+     * Returns the trigonometric sine of radian
      *
      * @param angRad radian
      * @return
